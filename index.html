@@ -2,10 +2,21 @@
 <link rel="stylesheet" href=mystyle.css>
 <!-- Display the countdown timer in an element -->
 <link rel="shortcut icon" href="icono.png" type="image/x-icon">
-<div>
+<body>
+
+<div id="contenido" style="display: none;" class="contenido">
     <h1>TIEMPO HASTA VERNOS :P</h1>
 <p id="demo"></p>
 </div>
+
+<div id="formulario" class="formulario">
+  <label for="contrasena">Contraseña:</label>
+  <input type="password" id="contrasena">
+  <button onclick="verificarContrasena()">Ingresar</button>
+</div>
+
+
+
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Dec 26, 2023 7:0:0").getTime();
@@ -35,4 +46,20 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
-</script></html>
+
+function verificarContrasena() {
+            var contrasenaIngresada = document.getElementById("contrasena").value;
+            // Cambia 'tu-contrasena' por la contraseña real
+            if (contrasenaIngresada === '24042022') {
+                document.getElementById("formulario").style.display = "none";
+                document.getElementById("contenido").style.display = "block";
+                document.body.style.backgroundImage = "url(background.jpeg)";
+            } else {
+                alert("Contraseña incorrecta");
+            }
+            }
+
+</script></body>
+
+
+</html>
